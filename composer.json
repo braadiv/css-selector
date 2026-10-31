@@ -1,9 +1,9 @@
 {
-    "name": "symfony/css-selector",
+    "name": "braadiv/css-selector",
     "type": "library",
-    "description": "Symfony CssSelector Component",
-    "keywords": [],
-    "homepage": "https://symfony.com",
+    "description": "Symfony CssSelector Component (PHP 8.4 LTS Modernized Fork)",
+    "keywords": ["css", "selector", "xpath", "php84"],
+    "homepage": "https://github.com/braadiv/css-selector",
     "license": "MIT",
     "authors": [
         {
@@ -17,10 +17,15 @@
         {
             "name": "Symfony Community",
             "homepage": "https://symfony.com/contributors"
+        },
+        {
+            "name": "Braa Salahi",
+            "homepage": "https://github.com/braadiv",
+            "role": "PHP 8.4 Modernization Maintainer"
         }
     ],
     "require": {
-        "php": "^5.5.9|>=7.0.8"
+        "php": ">=8.1 || ^8.2 || ^8.3 || ^8.4"
     },
     "autoload": {
         "psr-4": { "Symfony\\Component\\CssSelector\\": "" },
