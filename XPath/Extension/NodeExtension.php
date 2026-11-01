@@ -148,7 +148,7 @@ class NodeExtension extends AbstractExtension
         $name = $node->getAttribute();
         $safe = $this->isSafeName($name);
 
-        if ($this->hasFlag(self::ATTRIBUTE_NAME_IN_LOWER_CASE)) {
+        if ($name !== null && $this->hasFlag(self::ATTRIBUTE_NAME_IN_LOWER_CASE)) {
             $name = strtolower($name);
         }
 
@@ -161,7 +161,7 @@ class NodeExtension extends AbstractExtension
         $value = $node->getValue();
         $xpath = $translator->nodeToXPath($node->getSelector());
 
-        if ($this->hasFlag(self::ATTRIBUTE_VALUE_IN_LOWER_CASE)) {
+        if ($value !== null && $this->hasFlag(self::ATTRIBUTE_VALUE_IN_LOWER_CASE)) {
             $value = strtolower($value);
         }
 
@@ -195,7 +195,7 @@ class NodeExtension extends AbstractExtension
     {
         $element = $node->getElement();
 
-        if ($this->hasFlag(self::ELEMENT_NAME_IN_LOWER_CASE)) {
+        if ($element !== null && $this->hasFlag(self::ELEMENT_NAME_IN_LOWER_CASE)) {
             $element = strtolower($element);
         }
 
@@ -237,6 +237,6 @@ class NodeExtension extends AbstractExtension
      */
     private function isSafeName($name)
     {
-        return 0 < preg_match('~^[a-zA-Z_][a-zA-Z0-9_.-]*$~', $name);
+        return null !== $name && 0 < preg_match('~^[a-zA-Z_][a-zA-Z0-9_.-]*$~', $name);
     }
 }
